@@ -12,8 +12,8 @@ void heapify(){
         int k=i;
         int heap=0;
         int val=arr[k];
-        while(!heap && 2*k<n){
-            int j=2*k;
+        while(!heap && 2*k+1<n){
+            int j=2*k+1;
             if(j+1<n)
               if(arr[j]<arr[j+1]) j+=1;
             if(val>=arr[j]) heap=1;
