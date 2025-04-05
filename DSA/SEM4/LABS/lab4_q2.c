@@ -11,6 +11,8 @@ stack s;
 int graph[max][max];
 int lastvisited[max] = {0};  
 int n;
+int pop_order[max];
+int k=0;
 
 void push(int n) {
     s.top += 1;
@@ -35,6 +37,8 @@ void dfs(int start) {
                
             }
         }
+        pop_order[k++]=currentNode;
+
     }
 }
 
@@ -57,6 +61,9 @@ int main() {
             dfs(i);
         }
     }
+   printf("\n");
+    for(int i=k-1;i>=0;i--)
+    printf("%d ",pop_order[i]);
 
     return 0;
 }
